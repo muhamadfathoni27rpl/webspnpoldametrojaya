@@ -1,0 +1,38 @@
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand logo" href="index.html">
+      <img class="logo-default" src="images/logo.png" alt="logo"/>
+      <img class="logo-white" src="images/logo-white.png" alt="logo"/>
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav ml-auto text-center">
+
+        <li class="nav-item dropdown <%= a %>">
+          <a class="nav-link" href="/">Beranda</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#home">Selamat Datang</a>
+            <a class="dropdown-item" href="#sambutan">Sambutan</a>
+            <a class="dropdown-item" href="#program">Program Unggulan</a>
+            <a class="dropdown-item" href="#lokasi">Lokasi</a>
+          </div>
+        </li>
+
+        <li class="nav-item  <%= b %>">
+          <a class="nav-link" href="/library">E - Library</a>
+        </li>
+        <li class="nav-item  <%= c %>">
+          <a class="nav-link" href="/galeri">Galeri</a>
+        </li>
+        <li class="nav-item <%= d %>">
+          <a class="nav-link" href="/profil">Tentang Kami</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>

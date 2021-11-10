@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<%- include('include/header'); %>
+
+<body id="body">
+  <%- include('include/alert'); %>
+
+<header class="navigation fixed-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand logo" onclick="goBack()">
+        <i class="logo-white fa fa-arrow-left"style="color:white;"></i>
+        <i class="logo-default fa fa-arrow-left"style="color:black;"></i>
+      </a>
+      <a class="navbar-brand logo" href="/">
+        <img class="logo-default" src="images/logo.png" alt="logo"/>
+        <img class="logo-white" src="images/logo-white-perpus.png" alt="logo"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item ">
+            <form action="/login" method="post" role="form">
+              <div class="nav-link">
+                <input style="margin-top:2%;" type="text" placeholder="Nama Lengakap" class="form-control" name="user" id="user">
+              </div>
+          </li>
+          <li class="nav-item ">
+            <div class="nav-link">
+              <input style="margin-top:2%;" type="password" placeholder="Password" class="form-control" name="pass" id="pass">
+            </div>
+          </li>
+          <li class="nav-item ">
+            <div class="nav-link">
+              <input type="submit"style="border-radius:4px;" class="btn btn-main" value="Login">
+            </div></form>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-area"style="background-image:url('images/about/login-header.png')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s">E-Library <br> SPN Polda Metro Jaya</h1>
+          <p class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">Aplikasi E-Library adalah aplikasi perpustakaan berbasis website
+						<br> buku adalah sumber dari ilmu pengetahuan
+          </p>
+          <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
+            <li class="list-inline-item">
+              <a data-scroll href="#user" class="btn btn-main">Login E - Library</a>
+            </li>
+            <li class="list-inline-item">
+              <button type="button" class="btn btn-transparent" data-toggle="modal" data-target=".bd-example-modal-lg">Daftar</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Daftar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form action="/daftar" method="post" enctype="multipart/form-data">   
+            <div class="form-group">
+              <label class="col-md-2 control-label">Nama</label>
+              <div class="col-md-10">
+                <input class="form-control" required type="text" placeholder="Nama" name="nama" id="">
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">NOSIS</label>
+                <div class="col-md-10">
+                  <input class="form-control" required type="number" placeholder="Nosis" name="nosis" placeholder="nosis" id="">
+                </div>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label">Jenis Kelamin</label>
+                <select class="form-control col-md-10" id="kelamin" name="kelamin">
+                    <option value="">--- Silahkan Pilih ---</option>
+                    <option value="PRIA">Pria</option>
+                    <option value="PEREMPUAN">Perempuan</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-md-2 control-label">Tempat Lahir</label>
+                <div class="col-md-10">
+                  <input class="form-control" required type="text"  name="tmp_lahir" placeholder="Tempat Lahir" id="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Tanggal Lahir</label>
+                <div class="col-md-10">
+                  <input class="form-control" required type="date" placeholder="T" name="tgl_lahir" id="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Asal Polda</label>
+                <div class="col-md-10">
+                  <input class="form-control" required placeholder="Ex : POLDA METRO JAYA " type="text"  name="asal_polda" id="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Nomor HP</label>
+                <div class="col-md-10">
+                  <input class="form-control" required type="number" placeholder="Nomor Handphone" name="hp" id="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Alamat</label>
+                <div class="col-md-10">
+                  <input class="form-control" placeholder="Alamat Lengkap" required type="textarea"name="alamat" id="">
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+            </div>
+      
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Daftar</button></form>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+<footer id="footer" class="bg-one">
+  
+  <div class="footer-bottom" >
+    <h6>Design and Developed by <a href="">Tanhartaka Hatunggara</a></h6>
+  </div>
+</footer> 
+<script>
+  function goBack() {
+window.history.back();
+}
+</script>
+<%- include('include/close'); %>
+  </body>
+  </html>

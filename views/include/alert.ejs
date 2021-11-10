@@ -1,0 +1,10 @@
+
+<% if(message){ %>
+<script type="text/javascript"> 
+    $(document).ready(function(){ 
+    $('#Sj2adjjqSj09x').trigger('click'); 
+  });  
+  function ok(){swal('<%- message.intro %>','<%- message.message %>','<%- message.type %>');}
+</script> 
+<input name="Sj2adjjqSj09x" id="Sj2adjjqSj09x" type="hidden" onclick="ok()" />
+<% } %>

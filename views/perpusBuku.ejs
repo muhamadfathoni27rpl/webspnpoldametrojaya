@@ -1,0 +1,40 @@
+<%- include('include/header'); %>
+    <title>Welcome to E Library</title>
+</head>
+<body>
+    <%- include('include/alert'); %>
+    <%- include('include/navbar'); %>
+    <h1>List data buku</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">no</th>
+            <th scope="col">Judul</th>
+            <th scope="col">Pengarang</th>
+            <th scope="col">Edisi</th>
+            <th scope="col">Tahun Terbit</th>
+            <th scope="col">penerbit</th>
+            <th scope="col">Nomor rak</th>
+            <th scope="col">jumlah</th>
+            <th scope="col">Kondisi</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < data.length; i++) { %>
+                <% const x = data[i]; %>
+                <tr>
+                    <td><%= x.id %></td>
+                    <td><%= x.judul %></td>
+                    <td><%= x.pengarang %></td>
+                    <td><%= x.edisi %></td>
+                    <td><%= x.thn_terbit %></td>
+                    <td><%= x.penerbit %></td>
+                    <td><%= x.rak_no %></td>
+                    <td><%= x.jml %></td>
+                    <td><%= x.kondisi %></td>
+                  </tr> 
+            <% } %>
+        </tbody>
+      </table>
+</body>
+</html>

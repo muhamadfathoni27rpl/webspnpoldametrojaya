@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html> 
+ <%- include('include/header'); %>
+<body id="body">
+  <div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div> 
+<header class="navigation fixed-top">
+  <div class="container">
+    <%- include('include/navbar-library'); %>
+  </div>
+</header>
+
+<section style="background-image: url('images/bhn/sampulblurygbener\ \(2\).jpg');" class="single-page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>E - Kurikulum</h2><br><br><br>
+				
+			</div>
+		</div>
+	</div>
+</section>
+    <div class="container"><br>
+      <div class="row"><div class="col-md-12 ">
+        <table id="kur" class="table table- table-responsive table-hover table-striped" >
+          <thead>
+            <tr>
+              <th>No</th>
+              <th style="width: 100%;">Modul Kurikulum</th>
+              <th>Kategori</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let i = 0; i < dataBuku.length; i++) { %>
+              <% const x = dataBuku[i]; %>
+              <tr>
+                <td><%= i +1 %></td>
+                <td><%= x.judul %></td>
+                <td>
+                  <% if(x.jenis == 'DIKTUK'){ %>
+                    <div class="badge badge-primary"style="width: 100%;background-color:rgb(204, 15, 15);"><%= x.jenis %></div>
+                  <% } %>
+                  <% if(x.jenis == 'PELATIHAN'){ %>
+                    <div class="badge badge-secondary"><%= x.jenis %></div>
+                  <% } %>
+                  <% if(x.jenis == 'DIKBANG'){ %>
+                    <div class="badge badge-secondary"style="width: 100%;background-color:#1b1b1b;"><%= x.jenis %></div>
+                  <% } %>
+                </td>
+                <td>
+                  <a target="_blank" href="/api/pdf/<%=x.file %>">Download</a>
+                </td>
+              </tr>
+               
+            <% } %>
+          </tbody>
+         
+
+        </table><br></div></div>
+    </div>
+
+        
+
+<footer id="footer" class="bg-one">
+  <div class="top-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+      <img src="images/logo-white.png" class="inline-block" alt="">
+      <p>  Jalan Raya Cigombong Km. 20 Cigombong, Bogor, Jawa Barat <br>
+      Telp. 0251 - 8223344</p>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <ul>
+              <li><h3>Kontak Kami</h3></li>
+              <a href="https://www.instagram.com/calonbintara.pmj/" style="color: white"><i class="fab fa-instagram fa-2x"></i></a> &nbsp
+              <a href="https://www.youtube.com/channel/UC84NZuXzC07TajHPG7enUVg" style="color: white"><i class="fab fa-youtube fa-2x"></i></a>
+            </ul>
+          </div>
+      </div>
+    </div> 
+  </div>
+  <div class="footer-bottom">
+    <h5>Copyright 2021. All rights reserved.</h5>
+    <h6>Design and Developed by <a href="">Tanhartaka Hatunggara</a></h6>
+  </div>
+</footer> 
+    <script>
+      $(document).ready(function() {
+            $('#kur').DataTable();
+        } );
+    </script>    
+    <%- include('include/close'); %>
+  </body>
+  </html>

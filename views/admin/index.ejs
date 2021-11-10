@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('include/head'); %>
+<body id="page-top">
+    <%- include('../include/alert'); %>
+    <div id="wrapper">
+        <%- include('include/slidebar'); %>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <%- include('include/navbar'); %>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 mb-6">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h2 text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Data Buku</div>
+                                            <div class="h3 mb-0 font-weight-bold text-gray-800"><%=dataBuku.length%></div>
+                                            <a href="/admin/buku" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-book fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-4 col-md-6 mb-6">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h2 text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Data Anggota</div>
+                                            <div class="h3 mb-0 font-weight-bold text-gray-800"><%=dataSiswa.length%></div>
+                                            <a href="/admin/anggota" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-6">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h2 text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Data Kurikulum</div>
+                                            <div class="h3 mb-0 font-weight-bold text-gray-800"><%=dataKurikulum.length%></div>
+                                            <a href="/admin/kurikulum" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-book-open fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <%- include('include/close'); %>
+</body>
+
+</html>

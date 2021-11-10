@@ -1,0 +1,20 @@
+<%- include('include/header'); %>
+    <title>Welcome to E Library</title>
+</head>
+<body>
+    <%- include('include/alert'); %>
+    <nav class="navbar navbar-default bg-purple justify-content-center">
+        <a class="nav-link text-white" href="/library"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a class="nav-link text-white" href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+        <a class="nav-link text-white" href="/anggota"><i class="fas fa-user-tie"></i> Member</a>
+        <a class="nav-link text-white" href="/buku"><i class="fas fa-book"></i> Book</a>
+        <% if(data != 0){ %>
+            <a class="nav-link text-white" href="/logout">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        <% }else{ %>
+            <a class="nav-link text-white" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a>
+        <% } %>
+    </nav>
+        
+</body>
+</html>
+

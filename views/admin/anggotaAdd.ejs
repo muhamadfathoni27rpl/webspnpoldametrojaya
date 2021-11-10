@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('include/head'); %>
+
+<body id="page-top">
+    <%- include('../include/alert'); %>
+    
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+ 
+    
+        
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <div class="container-fluid">
+                        <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Data Buku</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="/tambah/anggota/1" method="post" enctype="multipart/form-data">   
+                                <div class="form-group">
+                                  <label class="col-md-2 control-label">Nama</label>
+                                  <div class="col-md-10">
+                                    <input class="form-control" required type="text" placeholder="Nama" name="nama" id="">
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">NOSIS</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" required type="number" placeholder="Nosis" name="nosis" placeholder="nosis" id="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                    <label class="control-label">Jenis Kelamin</label>
+                                    <select class="form-control col-md-10" id="kelamin" name="kelamin">
+                                        <option value="">--- Silahkan Pilih ---</option>
+                                        <option value="PRIA">Pria</option>
+                                        <option value="PEREMPUAN">Perempuan</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Tempat Lahir</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" required type="text"  name="tmp_lahir" placeholder="Tempat Lahir" id="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Tanggal Lahir</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" required type="date" placeholder="T" name="tgl_lahir" id="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Asal Polda</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" required placeholder="Ex: POLDA METRO JAYA " type="text"  name="asal_polda" id="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Nomor HP</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" required type="number" name="hp" id="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Alamat</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" required type="text"name="alamat" id="">
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <input class="btn btn-outline-primary" type="submit" value="Tambah">
+                                </div>
+                            </form>
+                        </div>
+                    
+
+                    </div>
+
+                    
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+
+    <%- include('include/close'); %>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <%- include('include/header'); %>
+<style>
+  .block{
+    line-height: 1.4;
+    font-family: "Source Sans Pro", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+  }
+</style>
+  <body id="body">
+  <%- include('include/alert'); %>
+
+<header class="navigation fixed-top">
+  <div class="container">
+    <%- include('include/navbar-library'); %>
+  </div>
+</header>
+
+<section class="hero-area" style="background-image:url('images/about/login-header.png');background-size: cover;height: 100vh;position: relative;display: flex;justify-content: center;align-items: center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s">Selamat Datang di<br> E - Library</h1>
+          <p class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">Aplikasi E-Library adalah aplikasi perpustakaan berbasis website
+						<br> buku adalah sumber dari ilmu pengetahuan
+          </p>
+          <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
+            <li class="list-inline-item">
+              <a data-scroll href="/katalog" class="btn btn-main">E - Catalog</a>
+            </li>
+            <li class="list-inline-item">
+              <a data-scroll href="/kurikulum" class="btn btn-transparent">E - Kurikulum</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <div id="sambutan"><br></div>
+        <section class="service-2 section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 text-center">
+                <img src="images/about/kaspn.png" style="height:100%;  width: 100%;" class="inline-block" alt="">
+              </div>
+              <div class="col-md-6">
+                  <h5>Sambutan</h5>
+                  <h2>Kepala Sekolah </h2>
+                  <p>Puji syukur kita panjatkan kehadirat  Tuhan Yang Maha Esa yang telah menganugrahkan ide-ide cemerlang dan mampu menuliskannya ke dalam buku Panduan E-LIBRARY  yang  merupakan program Prioritas Lemdiklat Polri sebagai transformasi Pendidikan Polri yang mewujudkan “ KAMPUS SEBAGAI PUSAT UNGGULAN DI SPN PMJ”.
+        
+                    <p>Dengan goresan pena sabagai bentuk pengabdian diri sebagai generasi anak bangsa, mendorong kami untuk terus berbenah diri. </p>
+                    
+                    <p>Sebagai sebuah harapan, semoga dengan terbitnya               BUKU PANDUAN E-LIBRARY SPN PMJ akan menjadi fokus penting dalam rangka mempersiapkan Sumber Daya Manusia yang Unggul di Era Revolusi Industri 4.0 menuju masyarakat 5.0. 
+                    </p>
+                    
+                    <p>Salam “ TRIBRATA ”.</p>
+                    <p><strong>KA SPN Polda Metro Jaya <br>KOMBES POL. TONY HARSONO, S.IK., M.Si</strong></p>
+                
+                </div>
+              </div>
+            </div> 
+          </div> <!-- End container -->
+        </section> <!-- End section -->
+
+        <section class="section-sm section" id="about"style="background:#F6F6F6;">
+          <div class="container">
+            <div class="row">
+            
+              <!-- section title -->
+             
+              <!-- /section title -->
+        
+              <div class="col-md-6">
+                <img src="images/about-us.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-6">
+                <h4>Pengantar</h4>
+                <p>Dalam rangka mendukung dan mewujudkan
+                  POLRI yang 4.0 kini perpustakaan Sekolah
+                  Polisi Negara Polda Metro Jaya membuat
+                  trobosan dan menghadirkan sistem pelayanan
+                  E-Library.</p>
+                <p>
+                  Sistem pelayanan E-library memudahkan
+                  perpustakaan untuk mengakses buku tanpa
+                  dibatasi jarak ruang dan waktu.
+                  Digital library Sekolah Polisi Negara Polda
+                  Metro Jaya memiliki koleksi berupa e-book
+                  materi kurikulum yang berisikan modul
+                  pendidikan, pembentukan, kecabangan, serta
+                  berbagai macam modul materi pelatihan
+                  lainnya.</p>
+                
+               
+                <a href="perpuslogin.html" class="btn btn-main mt-20">Login E- Library</a>
+              </div>
+            </div> 		<!-- End row -->
+          </div>   	<!-- End container -->
+        </section>   <!-- End section -->
+    <%- include('include/footer'); %>
+    <%- include('include/close'); %>
+  </body>
+  </html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('include/head'); %>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <div class="container-fluid">
+                        <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Data Buku</h6>
+                        </div>
+                        <div class="card-body">
+                            <form class="form-horizontal row-border" action="/e/buku/<%=data.id%>" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                  <label class="col-md-2 control-label">Judul Buku</label>
+                                  <div class="col-md-10">
+                                    <input class="form-control" type="text" value="<%=data.judul %>" name="judul" id="" required>
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Pengarang</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" type="text" value="<%=data.pengarang %>" name="pengarang" id="" required>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="col-md-2 control-label">Edisi</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" type="text" value="<%=data.edisi %>" name="edisi" id="" required>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="col-md-2 control-label">Tahun Terbit</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" type="number" value="<%=data.thn_terbit %>" name="thn_terbit" id="" required>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="col-md-2 control-label">Penerbit</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" type="text" value="<%=data.penerbit %>" name="penerbit" id="" required>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="col-md-2 control-label">Jumlah</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" type="number" value="<%=data.jml %>" name="jml" id="" required>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="col-md-2 control-label">Nomor Rak</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" type="number" value="<%=data.rak_no %>" name="rak_no" id="" required>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="col-md-2 control-label">Kondisi</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" type="text" value="<%=data.kondisi %>" name="kondisi" id="" required>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="col-md-2 control-label">Gambar</label>
+                                    <div class="col-md-10">
+                                      <input class="form-control" type="file" name="gambar" id="">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="d-grid gap-2 col-6 mx-auto">
+                                    <input class="btn btn-outline-primary" type="submit" value="Edit">
+                                  </div>
+                            </form>
+                        </div>
+                    
+
+                    </div>
+
+                    
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+
+    <%- include('include/close'); %>
+
+</body>
+
+</html>
+

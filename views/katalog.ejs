@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html> <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Bingo One page parallax responsive HTML Template ">
+  <meta name="author" content="Themefisher.com">
+  <title>SEKOLAH POLISI NEGARA POLDA METRO JAYA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="css/style.css">  
+  <script src="/js/bootstrap.min.js"></script>                 
+  <script src="/js/fa.min.js"></script>           
+  <script src="/js/jq.min.js"></script>        
+  <script src="/js/swt.min.js"></script>
+  <script src="/js/jq.slim.min.js"></script>
+  <script src="/js/poper.min.js"></script>
+  <script src="/js/bootstrap.min.js" ></script> 
+
+  <style>
+  
+
+.container1{
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.card-content{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+margin: 30px;
+}
+
+
+.card{
+position: relative;
+background: #fff;
+max-width: 325px;
+width: 325px;
+height: auto;
+margin: 25px;
+box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+border-radius: 10px;
+overflow: hidden;
+}
+
+.card-image{
+max-height: 200px;
+}
+
+.card-image img{
+  object-fit: cover;
+max-width: 100%;
+height: 200px;
+margin: 0 auto;
+}
+
+.card-info{
+position: relative;
+color: #222;
+padding: 10px 20px 20px;
+}
+
+.card-info h3{
+font-size: 1.8em;
+font-weight: 800;
+margin-bottom: 5px;
+}
+
+.card-info p{
+font-size: 1em;
+margin-bottom: 5px;
+}
+
+.pagination{
+
+text-align: center;
+margin: 30px 30px 60px;
+user-select: none;
+}
+
+.pagination li{
+ font-family:  "Catamaran", sans-serif;
+display: inline-block;
+margin: 5px;
+box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
+}
+
+.pagination li a{
+color: rgb(0, 0, 0);
+text-decoration: none;
+font-size: 1.2em;
+line-height: 45px;
+}
+.pagination li a:hover{
+color: rgb(230, 17, 17);
+
+}
+
+.previous-page, .next-page{
+background: #ce0a0a;
+width: 80px;
+border-radius: 45px;
+cursor: pointer;
+transition: 0.3s ease;
+}
+
+.previous-page:hover{
+transform: translateX(-5px);
+}
+
+.next-page:hover{
+transform: translateX(5px);
+}
+
+.current-page, .dots{
+background: rgb(255, 255, 255);
+width: 45px;
+border-radius: 50%;
+cursor: pointer;
+}
+.page-item.active .page-link{
+  background: rgb(194, 4, 4);
+  border-color: rgba(194, 4, 4, 0.644);
+}
+
+.disable{
+background: rgb(255, 255, 255);
+}
+  
+</style>
+</head>
+
+<body id="body">
+  <div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div> 
+<header class="navigation fixed-top">
+  <div class="container">
+    <%- include('include/navbar-library'); %>
+  </div>
+</header>
+
+<section style="background-image: url('images/bhn/sampulblurygbener\ \(2\).jpg');" class="single-page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>E - Catalog</h2><br><br><br>
+				
+			</div>
+		</div>
+	</div>
+</section>
+<section>
+  
+<div class="container">
+  <div class="col-md-12">
+    <form action="/search" method="get">
+      <div class="row"><br></div>
+      <div class="row">
+        <% if(search == true) { %>
+          <input  type="text" name="cari" id="" value="<%= key %>" class="form-control col-md-11" placeholder="Cari Buku Yang Diinginkan">
+        <% }else{ %>
+          <input  type="text" name="cari" id="" class="form-control col-md-11" placeholder="Cari Buku Yang Diinginkan">
+        <% } %>
+        <button style="background-color: rgb(204, 15, 15);color: white;" type="submit"class="form-control col-md-1"><i class="tf-ion-search"></i></button>
+      </div>
+    </form>
+  </div>
+</div>
+</section>
+    <div class="container1">
+      <div class="card-content" style="display: none">
+        
+        <% if(dataBuku.length >0){
+        for (let i = 0; i < dataBuku.length; i++) { %>
+          <% const x = dataBuku[i]; %>
+        <div class="card">
+          <div class="card-image"style="margin: 0 auto;">
+            <% if(x.img == '') { %>
+              <img src="images/bhn/Data Buku.jpg" alt="">
+            <% }else{ %>
+              <img src="/api/gambar/<%=x.img%>" alt="">
+            <% } %>
+          </div>
+          <div class="card-info">
+            <h3><%= x.judul %></h3>
+            <p>Pengarang : <%= x.pengarang %> <br>
+              Edisi : <%= x.edisi %> <br>
+              Tahum Terbit : <%= x.thn_terbit %> <br>
+              Penerbit : <%= x.penerbit %> <br>
+              Rak Nomor : <%= x.rak_no %></p>
+          </div>
+        </div>
+    
+        <% }%>
+      </div><br>
+      <div class="pagination">
+        <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+        <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
+        <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
+        <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+        <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
+        <li class="page-item next-page"><a class="page-link" href="#">Next</a></li>
+      </div>
+      <% } else {%> <div style="font-size: 30px;margin-top: -80%; "><p></p>
+         Hasil Pencarian <strong> " <%= key %> "</strong> Buku Tidak Ditemukan
+        
+      </div>
+          </div>
+         <% } %>
+        
+     
+    </div>
+
+        
+
+<footer id="footer" class="bg-one">
+  <div class="top-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+      <img src="images/logo-white.png" class="inline-block" alt="">
+      <p>  Jalan Raya Cigombong Km. 20 Cigombong, Bogor, Jawa Barat <br>
+      Telp. 0251 - 8223344</p>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <ul>
+              <li><h3>Kontak Kami</h3></li>
+              <a href="https://www.instagram.com/calonbintara.pmj/" style="color: white"><i class="fab fa-instagram fa-2x"></i></a> &nbsp
+              <a href="https://www.youtube.com/channel/UC84NZuXzC07TajHPG7enUVg" style="color: white"><i class="fab fa-youtube fa-2x"></i></a>
+            </ul>
+          </div>
+      </div>
+    </div> 
+  </div>
+  <div class="footer-bottom">
+    <h5>Copyright 2021. All rights reserved.</h5>
+    <h6>Design and Developed by <a href="">Tanhartaka Hatunggara</a></h6>
+  </div>
+</footer> 
+  <script type="text/javascript">
+    function getPageList(totalPages, page, maxLength){
+      function range(start, end){
+        return Array.from(Array(end - start + 1), (_, i) => i + start);
+      }
+    
+      var sideWidth = maxLength < 9 ? 1 : 2;
+      var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+      var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+    
+      if(totalPages <= maxLength){
+        return range(1, totalPages);
+      }
+    
+      if(page <= maxLength - sideWidth - 1 - rightWidth){
+        return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
+      }
+    
+      if(page >= totalPages - sideWidth - 1 - rightWidth){
+        return range(1, sideWidth).concat(0, range(totalPages- sideWidth - 1 - rightWidth - leftWidth, totalPages));
+      }
+    
+      return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
+    }
+    
+    $(function(){
+      var numberOfItems = $(".card-content .card").length;
+      var limitPerPage = 8; //How many card items visible per a page
+      var totalPages = Math.ceil(numberOfItems / limitPerPage);
+      var paginationSize = 7; //How many page elements visible in the pagination
+      var currentPage;
+    
+      function showPage(whichPage){
+        if(whichPage < 1 || whichPage > totalPages) return false;
+    
+        currentPage = whichPage;
+    
+        $(".card-content .card").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
+    
+        $(".pagination li").slice(1, -1).remove();
+    
+        getPageList(totalPages, currentPage, paginationSize).forEach(item => {
+          $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
+          .toggleClass("active", item === currentPage).append($("<a>").addClass("page-link")
+          .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
+        });
+    
+        $(".previous-page").toggleClass("disable", currentPage === 1);
+        $(".next-page").toggleClass("disable", currentPage === totalPages);
+        return true;
+      }
+    
+      $(".pagination").append(
+        $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Prev")),
+        $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Next"))
+      );
+    
+      $(".card-content").show();
+      showPage(1);
+    
+      $(document).on("click", ".pagination li.current-page:not(.active)", function(){
+        return showPage(+$(this).text());
+      });
+    
+      $(".next-page").on("click", function(){
+        return showPage(currentPage + 1);
+      });
+    
+      $(".previous-page").on("click", function(){
+        return showPage(currentPage - 1);
+      });
+    });
+    </script>      
+    <%- include('include/close'); %>
+  </body>
+  </html>

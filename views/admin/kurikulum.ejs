@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('include/head'); %>
+<body id="page-top">
+    <%- include('../include/alert'); %>
+    <div id="wrapper">
+        <%- include('include/slidebar'); %>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <%- include('include/navbar'); %>
+                <div class="container-fluid">
+                        <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h3 class="m-0 font-weight-bold text-primary">Data Kurikulum</h3>
+                            <a href="/admin/a/kurikulum/1">Tambahkan Kurikulum</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Judul</th>
+                                            <th>Jenis</th>
+                                            <th>File</th>
+                                            <th>Setting</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for (let i = 0; i < dataKurikulum.length; i++) { %>
+                                            <% const x = dataKurikulum[i]; %>
+                                        <tr>
+                                            <td><%=x.judul %></td>
+                                            <td><%=x.jenis %></td>
+                                            <td><a href="/api/pdf/<%=x.file %>">Lihat File</a></td>
+                                            <td>
+                                                <button type="button" onclick="location.href = '/admin/e/kurikulum/<%= x.id %>'"   class="btn btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                                <button type="button" onclick="konfir('<%= x.id %>');" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <script>
+        function konfir(id){
+            swal({
+                title: "Apakah Kamu Yakin ?",
+                text: "Data Akan Dihapus Secara Permanen dari sistem kami",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((gas) => {
+                if (gas) {
+                    swal("Data Terhapus", {
+                        icon: "success",
+                    });
+                    location.href = '/admin/d/kurikulum/'+id
+                } else {
+                    swal("Dibatalkan");
+                }
+            });
+        }
+    </script>
+    <%- include('include/close'); %>
+</body>
+
+</html>

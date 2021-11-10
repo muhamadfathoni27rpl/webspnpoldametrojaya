@@ -1,0 +1,42 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+       
+            <img width="100%" class="logo-white" src="../images/logo-white.png" alt="logo"/>
+         
+    </a>
+
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item <%=a%>">
+        <a class="nav-link" href="/admin/">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+
+    <li class="nav-item <%=b%>">
+        <a class="nav-link" href="/admin/buku">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Kelola Buku</span></a>
+    </li>
+
+    <li class="nav-item <%=c%>">
+        <a class="nav-link" href="/admin/anggota">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Keanggotaan</span></a>
+    </li>
+
+    <li class="nav-item <%= d %>">
+        <a class="nav-link" href="/admin/kurikulum">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Kurikulum</span></a>
+    </li>
+    <hr class="sidebar-divider d-none d-md-block">
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/logout" data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-fw fa-external-link-alt fa-flip-horizontal"></i>
+            <span>Log Out</span></a>
+    </li>
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('include/head'); %>
+
+   
+<body>
+    <%- include('../include/alert'); %>
+    
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <div class="container-fluid">
+                        <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Data Buku</h6>
+                        </div>
+                        <div class="card-body">
+    <form action="/tambah/buku/1" method="post" enctype="multipart/form-data">   
+        <div class="form-group">
+        <label class="col-md-2 control-label">Judul Buku</label>
+        <div class="col-md-10">
+          <input class="form-control" type="text" value=""placeholder="Masukan Judul" name="judul" id="" required>
+        </div>
+        </div>
+
+
+<div class="form-group">
+    <label class="col-md-2 control-label">Pengarang</label>
+    <div class="col-md-10">
+        <input class="form-control" type="text" name="pengarang" id="" placeholder="Masukan Pengarang" required>
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-2 control-label">Edisi</label>
+  <div class="col-md-10">
+        <input class="form-control" type="text" name="edisi" id="" placeholder="Masukan Edisi" required>
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-2 control-label">Tahun Terbit</label>
+  <div class="col-md-10">
+        <input class="form-control" type="number" name="thn_terbit" id="" placeholder="Masukan Tahun Terbit" required>
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-2 control-label">Penerbit</label>
+  <div class="col-md-10">
+    
+        <input class="form-control" type="text" name="penerbit" id="" placeholder="Masukan Penerbit" required>
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-2 control-label">Jumlah</label>
+  <div class="col-md-10">
+        <input class="form-control" type="number" name="jml" id="" placeholder="Masukan Jumlah" required>    </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-2 control-label">Rak Nomor</label>
+      <div class="col-md-10">
+        <input class="form-control" type="number" name="rak_no" id="" placeholder="Masukan Rak No" required>    </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-2 control-label">Kondisi</label>
+      <div class="col-md-10">
+        <input class="form-control" type="text" name="kondisi" id="" placeholder="Masukan Kondisi" required>    </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-2 control-label">Gambar</label>
+      <div class="col-md-10">
+        <input class="form-control" type="file" name="gambar" id="">
+        <input class="btn btn-outline-primary" type="submit" value="Tambahkan">
+    </form>
+</form>
+</div>
+
+
+</div>
+
+
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+<span>Copyright &copy; Your Website 2021</span>
+</div>
+</div>
+</footer>
+<!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+
+<%- include('include/close'); %>
+
+</body>
+
+</html>
+

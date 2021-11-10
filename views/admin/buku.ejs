@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('include/head'); %>
+<body id="page-top">
+    <%- include('../include/alert'); %>
+    <div id="wrapper">
+        <%- include('include/slidebar'); %>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <%- include('include/navbar'); %>
+                <div class="container-fluid">
+                        <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h3 class="m-0 font-weight-bold text-primary">Data Buku</h3>
+                            <a href="/admin/a/buku/1">Tambahkan buku</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="buku_" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>no</th>
+                                            <th>Judul</th>
+                                            <th>Pengarang</th>
+                                            <th>Edisi</th>
+                                            <th>Tahun terbit</th>
+                                            <th>Penerbit</th>
+                                            <th>Nomor Rak</th>
+                                            <th>Kondisi</th>
+                                            <th>Gambar</th>
+                                            <th>Setting</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <% for (let i = 0; i < dataBuku.length; i++) { %>
+                                                <% const x = dataBuku[i]; %>
+                                            <tr>
+                                                <td><%=x.id %></td>
+                                                <td><%=x.judul %></td>
+                                                <td><%=x.pengarang %></td>
+                                                <td><%=x.edisi %></td>
+                                                <td><%=x.thn_terbit %></td>
+                                                <td><%=x.penerbit %></td>
+                                                <td><%=x.rak_no %></td>
+                                                <td><%=x.kondisi %></td>
+                                                <td>
+                                                    <% if(x.img == ''){ %>
+                                                        <img src="/images/bhn/Data Buku.jpg" style="width: 20%; height: 20%;" alt="">
+                                                    <% }else{ %>
+                                                        <img src="/api/gambar/<%=x.img%>" style="width: 20%; height: 20%;" alt="">
+                                                    <% } %>
+                                                </td>
+                                                <td>
+                                                    <button type="button" onclick="location.href = '/admin/e/buku/<%= x.id %>'"   class="btn btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                                    <button type="button" onclick="konfir('<%= x.id %>');" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <script>
+        function konfir(id){
+            swal({
+                title: "Apakah Kamu Yakin ?",
+                text: "Data Akan Dihapus Secara Permanen dari sistem kami",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((gas) => {
+                if (gas) {
+                    swal("Data Terhapus", {
+                        icon: "success",
+                    });
+                    location.href = '/admin/d/buku/'+id
+                } else {
+                    swal("Dibatalkan");
+                }
+            });
+        }
+        $(document).ready(function() {
+            $('#buku_').DataTable();
+        } );
+    </script>
+    <%- include('include/close'); %>
+</body>
+
+</html>
